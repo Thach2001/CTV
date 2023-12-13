@@ -1,13 +1,15 @@
 import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
+import Sidebar from "../components/Sidebar/Sidebar";
 
 const Layout = ({ children }) => {
    return (
-      <>
-         <Header />
-         <main className="container">{children}</main>
-         <Footer />
-      </>
+      <div className="bg-neutral-100 h-screen w-screen overflow-hidden flex flex-row">
+         <Sidebar />
+         <div className="flex flex-col flex-1">
+            <Header />
+            <div className="flex-1 p-4 min-h-0 overflow-auto">{children}</div>
+         </div>
+      </div>
    );
 };
 
